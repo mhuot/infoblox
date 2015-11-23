@@ -25,7 +25,6 @@ module Infoblox
     end
 
     def self.get(connection)
-      # Infoblox.log.debug("connection #{connection}");
       JSON.parse(connection.get(resource_uri).body).map do |jobj|
         klass = resource_map[jobj["_ref"].split("/").first]
         if klass.nil?
@@ -35,10 +34,6 @@ module Infoblox
           klass.new(jobj.merge({:connection => connection}))
         end
       end.compact
-      # puts "connection #{connection}";
-      # JSON.parse(connection.get(resource_uri).body).map do |item|
-      #   new(item.merge({:connection => connection}));
-      # end
     end
 
     # Example of a working post for restartservices
