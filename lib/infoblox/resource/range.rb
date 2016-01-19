@@ -5,7 +5,11 @@ module Infoblox
                          :extensible_attributes,
                          :network_view, 
                          :start_addr,
-                         :comment
+                         :comment, 
+                         :member,
+                         :failover_association, 
+                         :name,
+                         :server_association_type
 
     wapi_object "range"
     
