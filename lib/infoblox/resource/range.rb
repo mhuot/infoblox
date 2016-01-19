@@ -4,7 +4,8 @@ module Infoblox
                          :extattrs,
                          :extensible_attributes,
                          :network_view, 
-                         :start_addr
+                         :start_addr,
+                         :comment
 
     wapi_object "range"
     

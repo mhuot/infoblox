@@ -129,6 +129,8 @@ module Infoblox
     end
 
     def post
+      puts "Connection - #{connection}"
+      puts remote_attribute_hash(write = true, post = true)
       self._ref = unquote(connection.post(resource_uri, remote_attribute_hash(write = true, post = true)).body)
       true
     end
